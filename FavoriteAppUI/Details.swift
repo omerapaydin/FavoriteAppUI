@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct Details: View {
+    
+    var chosen: FavoriteElements
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+       VStack    {
+           Image(chosen.imageName)
+               .resizable()
+               .aspectRatio(contentMode: .fit)
+               .frame(width: 200, height: 200)
+            Text(chosen.name)
+            Text(chosen.description)
+        }
     }
 }
 
 #Preview {
-    Details()
+    Details(chosen: megadeth)
 }
